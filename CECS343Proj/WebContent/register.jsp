@@ -16,37 +16,26 @@
 
 <title>Insert title here</title>
 </head>
+
 <body>
-	<p> Create New Account </p>
-	
-	
-<%
 
-%>
-
-<form action = "Register" method = "GET">
-	<div class="imgcontainer">
-      <img src="avatar.png" alt="Avatar" class="avatar">
-    </div>
-	<div style="color:red">${errorMessage}</div>	
-    <div class="container">
-      <label for="username"><b>UserName :</b></label>
-      <input type="text" placeholder="Enter Username" name="username" required>
-    </div>
-      <td> </td>
-     <div>
-      <label for="password"><b>Password :   </b></label>
-      <input type="password" placeholder="Enter Password" name="password" required>
-     </div>
-     <div>
-      <label for="emailAddress"><b>Email Address :   </b></label>
-      <input type="emailAddress" placeholder="Enter Email Address" name="emailAddress" required>
-     </div>
-    <div>
-      <button type="submit"> Register</button>
-	</div>
-	
-</form>
+	<section class ="registerContainer">
+		<div class = "registration">
+			<h2> Register </h2>
+				<form action = "Register" method = "GET">
+					<p class = "registerType"> <input type="text" placeholder="Enter Username" name="username" required> </p>
+					<p class = "registerType"> <input type = "text" placeholder = "Enter Password" name = "password" required> </p>
+					<p class = "registerType"> <input type = "text" placeholder = "Enter Email Address" name = "emailAddress" required ></p>
+					
+      				<button class = "button registerButton" "type="submit"> Register</button>
+				</form>
+				
+				<div class = "registerAdditional">
+					<p class = "registerType"> <a href = "login.jsp">  Already have an account, sign in </a> </p>
+				</div>
+				
+		</div>
+</section>
 
 </body>
 </html>

@@ -20,6 +20,8 @@
 </style>
 <body>
 
+
+
 <div class="w3-bar w3-teal">
   <a href="register.jsp" class="w3-bar-item w3-button">Home</a>
   <a href="#" class="w3-bar-item w3-button">Link 1</a>
@@ -35,10 +37,10 @@
  </form>
  
   <a href="login.jsp">
-    <button type = "submit">Login</button>
+    <button type = "submit" class = "btn btn-primary btn-lg">Login</button>
   </a>
   <a href="register.jsp">
-    <button type = "submit">Register</button>
+    <button type = "submit" class = "btn btn-primary btn-lg">Register</button>
   </a>
 </div>
 

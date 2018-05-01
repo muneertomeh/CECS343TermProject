@@ -35,26 +35,39 @@ input[type=text], input[type=password] {
 
 </style>
 <body>
-<%
-%>
+
+
+<div class="w3-bar w3-teal">
+  <a href="register.jsp" class="w3-bar-item w3-button">Home</a>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+</div>
+
+
+
+
 <form action = "Login" method = "get"> 
-	
+
+<div style = "background-color: #343d46;">
     <div class="imgcontainer">
       <img src="avatar.png" alt="Avatar" class="avatar">
     </div>
 	<div style="color:red">${errorMessage}</div>	
     <div class="container">
-      <label for="username"><b>UserName :</b></label>
+      <label for="username"><b>Username  :</b></label>
       <input type="text" placeholder="Enter Username" name="username" required>
-    </div>
-      <td> </td>
-     <div>
-      <label for="password"><b>Password :   </b></label>
+   	</div>
+    <div class = "container">
+      <label for="password"><b>Password   :</b></label>
       <input type="password" placeholder="Enter Password" name="password" required>
     </div>
-    <div>
-      <button type="submit"> Log In</button>
-	</div>
+   	<div style = "text-align:center;">
+   		<button type = "submit"> Login</button>
+   	
+   	</div>
+
+</div>
 </form>
 
 </body>
