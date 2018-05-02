@@ -136,13 +136,16 @@ public class RestaurantDAO extends HttpServlet{
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)	throws ServletException, IOException{
 		String restaurantName = ((ServletRequest) request).getParameter("keyword").toString();
+		String nameOfUser = ((ServletRequest) request).getParameter("nameOfUser").toString();
 		
 		ArrayList listOfRestaurants = this.searchRestaurant(restaurantName);
 		
 		
 		response.setContentType("text/html");
 		System.out.println(listOfRestaurants);
-		
+		//setting attribute of username an the restaurants list to pass onto the searchresults.jsp page
+		//NOTE: nameofuser will be null if there is no user logged in the current session
+		request.setAttribute("username", nameOfUser);
 		request.setAttribute("restaurantResults", listOfRestaurants);
 		RequestDispatcher reqDispatcher = request.getRequestDispatcher("/searchresults.jsp");
 		reqDispatcher.forward(request, response);

@@ -34,7 +34,7 @@ public class Login extends HttpServlet{
 			UserDAO ud = new UserDAO();
 			User u=ud.retrieveUser(username, password);
 			
-			request.setAttribute("User",u);
+			request.setAttribute("User",u); //then request.getAttribute() in home.jsp will be used to get the user's information ok?
 			
 			RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
 			rd.include(request, response);

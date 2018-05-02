@@ -16,11 +16,17 @@
 
 <body>
 
+	<%
+	ArrayList<Restaurant> restaurantList = (ArrayList<Restaurant>)request.getAttribute("restaurantResults");
+	String name = (String)request.getAttribute("username");
+
+	%>
 	<div class="w3-bar w3-teal">
   		<a href="register.jsp" class="w3-bar-item w3-button">Home</a>
   		<a href="#" class="w3-bar-item w3-button">Link 1</a>
   		<a href="#" class="w3-bar-item w3-button">Link 2</a>
   		<a href="#" class="w3-bar-item w3-button">Link 3</a>
+  		<a href = "#" class = "w3-bar-item w3-button"> <%=name %> </a>
 	</div>
 	
 
@@ -30,8 +36,8 @@
  			<input name = "keyword" type="search" placeholder="Search..">
  		</form>
 	</div>
+	
 	<%
-	ArrayList<Restaurant> restaurantList = (ArrayList<Restaurant>)request.getAttribute("restaurantResults");
 	if(restaurantList ==null){
 		out.println("No restaurants havve been identified with that name");
 	}
@@ -54,6 +60,7 @@
 							<input type = "hidden" name = "restaurantName" value = <%= r.getRestaurantName() %> />
 							<input type = "hidden" name = "restaurantAddress" value = <%= r.getRestaurantAddress() %> />
 							<input type = "hidden" name = "restaurantType" value = <%= r.getRestaurantType() %> />
+							<input type = "hidden" name = "username" value = <%=name %>>
 	                		<input type="submit" name="Click" value="Click" >
             			</form>
 					</div>

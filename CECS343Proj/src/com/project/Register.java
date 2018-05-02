@@ -39,6 +39,8 @@ public class Register extends HttpServlet {
 					out.print("Account has been successfully made");
 					UserDAO ud = new UserDAO();
 					ud.insertNewUser(username, password, emailAddress);
+					User retrievedUser = ud.retrieveUser(username, password);
+					request.setAttribute("User",retrievedUser);
 					RequestDispatcher disp = request.getRequestDispatcher("/home.jsp");
 					disp.forward(request,  response);
 				}
