@@ -11,29 +11,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="css/style.css" type="text/css" />
-<link rel="stylesheet" href="css/style.css" type="text/css" />
+
 <title>Login</title>
 </head>
-<style>/* Set a style for all buttons */
-button {
-    background-color: #4CAF50;
-    color: black;
-    padding: 14px 20px;
-    margin: 10px 0;
-    border: 2;
-    cursor: pointer;
-    width: 80%; }
-       
-/* Full-width input fields */
-input[type=text], input[type=password] {
-    width: 70%;
-    padding: 12px 25px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 4px solid #ccc;
-    box-sizing: border-box; }
 
-</style>
 <body>
 
 
@@ -47,28 +28,22 @@ input[type=text], input[type=password] {
 
 
 
-<form action = "Login" method = "get"> 
 
-<div style = "background-color: #343d46;">
-    <div class="imgcontainer">
-      <img src="avatar.png" alt="Avatar" class="avatar">
-    </div>
-	<div style="color:red">${errorMessage}</div>	
-    <div class="container">
-      <label for="username"><b>Username  :</b></label>
-      <input type="text" placeholder="Enter Username" name="username" required>
-   	</div>
-    <div class = "container">
-      <label for="password"><b>Password   :</b></label>
-      <input type="password" placeholder="Enter Password" name="password" required>
-    </div>
-   	<div style = "text-align:center;">
-   		<button type = "submit"> Login</button>
-   	
-   	</div>
 
-</div>
-</form>
+
+	<section class ="registerContainer">
+		<div class = "registration">
+			<h2> Log In </h2>
+			<div style="color:red">${errorMessage}</div>	
+				<form action = "Register" method = "GET">
+					<p class = "registerType"> <input type="text" placeholder="Enter Username" name="username" required></p>
+					<p class = "registerType"> <input type = "text" placeholder = "Enter Password" name = "password" required> </p>
+      				<button class = "button registerButton" "type="submit"> Log In</button>
+				</form>
+		</div>
+			
+	</section>
+
 
 </body>
 </html>
