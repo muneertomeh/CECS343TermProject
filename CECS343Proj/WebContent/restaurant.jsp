@@ -19,6 +19,10 @@
 </head>
 
 <style>
+.checked {
+    color: orange;
+}
+
 </style>
 
 <body>
