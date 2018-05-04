@@ -34,10 +34,13 @@
 		<form action = "Search" method = "get">
     		<button type = "submit">Search</button>	
  			<input name = "keyword" type="search" placeholder="Search..">
+ 			<input type ="hidden" name = "nameOfUser" value = <%=name %>>
  		</form>
 	</div>
 	
 	<%
+
+	
 	if(restaurantList ==null){
 		out.println("No restaurants havve been identified with that name");
 	}
