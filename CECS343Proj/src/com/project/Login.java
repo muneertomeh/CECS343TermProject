@@ -58,7 +58,7 @@ public class Login extends HttpServlet{
 	public String[] ensureLoginSuccess(String user, String password) {
 		Connection conn = getConnection();
 		try {
-			PreparedStatement ptsmt = (PreparedStatement) conn.prepareStatement("SELECT * from user where userName = ? AND password = ?");
+			PreparedStatement ptsmt = (PreparedStatement) conn.prepareStatement("SELECT * from muneerfirsttable.user where userName = ? AND password = ?");
 			ptsmt.setString(1, user);
 			ptsmt.setString(2, password);
 			
