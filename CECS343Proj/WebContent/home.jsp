@@ -18,7 +18,7 @@
 </head>
 <style>
 </style>
-<body>
+<body background = "food.png">
 
 
 <%
