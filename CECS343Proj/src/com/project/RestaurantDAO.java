@@ -46,6 +46,8 @@ public class RestaurantDAO extends HttpServlet{
 			String restAddress = ((ServletRequest)request).getParameter("restaurantAddress").toString();
 			String restType = ((ServletRequest)request).getParameter("restaurantType").toString();
 			
+			String username = ((ServletRequest)request).getParameter("username").toString();
+			
 			
 			Restaurant aRestaurant = new Restaurant();
 			aRestaurant.setRestaurantID(restID);
@@ -55,6 +57,7 @@ public class RestaurantDAO extends HttpServlet{
 			aRestaurant.setRestaurantBusinessInfo(busInfo);
 			
 			request.setAttribute("chosenRestaurant", aRestaurant);
+			request.setAttribute("loggedUser", username);
 			RequestDispatcher reqDispatcher = request.getRequestDispatcher("restaurant.jsp");
 			reqDispatcher.forward(request, response);
 		}

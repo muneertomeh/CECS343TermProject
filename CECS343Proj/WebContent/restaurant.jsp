@@ -25,11 +25,22 @@
 
 </style>
 
+<%
+	
+	RestaurantDAO rd = new RestaurantDAO();
+	
+	Restaurant selectedRestaurant = (Restaurant) request.getAttribute("chosenRestaurant");
+	String username = (String) request.getAttribute("loggedUser");
+	ArrayList<Review> reviews = rd.retrieveReviews(selectedRestaurant.getRestaurantID());
+	
+	out.println(selectedRestaurant.getRestaurantName());
+	%>
+
 <body>
 	<div class="w3-bar w3-teal">
   		<a href="register.jsp" class="w3-bar-item w3-button">Home</a>
   		<a href="#" class="w3-bar-item w3-button">Link 1</a>
-  		<a href="#" class="w3-bar-item w3-button">Link 2</a>
+  		<a href="#" class="w3-bar-item w3-button"><%=username %></a>
   
 		</div>
 
@@ -38,15 +49,7 @@
  		<input name = "keyword" type="search" placeholder="Search..">
  	</form>
 	<p>
-	<%
 	
-	RestaurantDAO rd = new RestaurantDAO();
-	
-	Restaurant selectedRestaurant = (Restaurant) request.getAttribute("chosenRestaurant");
-	ArrayList<Review> reviews = rd.retrieveReviews(selectedRestaurant.getRestaurantID());
-	
-	out.println(selectedRestaurant.getRestaurantName());
-	%>
 	</p>
 	
 	<div class ="col" align = "left">
