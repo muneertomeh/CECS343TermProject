@@ -14,7 +14,9 @@
 <style>
 </style>
 
-<body background = "food.png">
+
+<body background = "search.png">
+
 
 	<%
 	ArrayList<Restaurant> restaurantList = (ArrayList<Restaurant>)request.getAttribute("restaurantResults");
