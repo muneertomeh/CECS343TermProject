@@ -53,8 +53,7 @@
 		</div>
 		
 		
-		<img src = "logo.jpg" align = "middle">
-	
+		<img src = "logo.jpg">
 		 
 		<div class = "middlenav"> 
 		  <a href="login.jsp">
