@@ -36,7 +36,7 @@
 	out.println(selectedRestaurant.getRestaurantName());
 	%>
 
-<body>
+<body background = "search.png">
 	<div class="w3-bar w3-teal">
   		<a href="register.jsp" class="w3-bar-item w3-button">Home</a>
   		<a href="#" class="w3-bar-item w3-button">Link 1</a>
@@ -47,6 +47,7 @@
 	<form action = "Search" method = "get">
     	<button type = "submit">Search</button>	
  		<input name = "keyword" type="search" placeholder="Search..">
+ 		<input type ="hidden" name = "nameOfUser" value = <%=username %>>
  	</form>
 	<p>
 	
