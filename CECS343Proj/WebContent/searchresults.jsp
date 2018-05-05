@@ -44,7 +44,7 @@
 
 	
 	if(restaurantList ==null){
-		out.println("No restaurants havve been identified with that name");
+		out.println("No restaurants have been identified with that name.");
 	}
 	
 	

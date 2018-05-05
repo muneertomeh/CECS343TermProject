@@ -15,11 +15,7 @@
 <title>Login</title>
 </head>
 
-<body>
-
-
-
-
+<body background = "food.png">
 	<section class ="registerContainer">
 		<div class = "registration">
 			<h2> Log In </h2>
@@ -27,7 +23,7 @@
 				<form action = "Login" method = "GET">
 					<p class = "registerType"> <input type="text" placeholder="Enter Username" name="username" required></p>
 					<p class = "registerType"> <input type = "text" placeholder = "Enter Password" name = "password" required> </p>
-      				<button class = "button registerButton" "type="submit"> Log InNNN</button>
+      				<button class = "button registerButton" "type="submit"> Log In</button>
 				</form>
 		</div>
 			

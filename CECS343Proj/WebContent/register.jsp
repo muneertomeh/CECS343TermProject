@@ -17,14 +17,14 @@
 <title>Insert title here</title>
 </head>
 
-<body>
+<body background = "food.png">
 
 	<section class ="registerContainer">
 		<div class = "registration">
 			<h2> Register </h2>
 			<div style="color:red">${errorMessage}</div>	
 				<form action = "Register" method = "GET">
-					< <input type="text" placeholder="Enter Username" name="username" required></p>
+					<p class = "registerType"> <input type="text" placeholder="Enter Username" name="username" required></p>
 					<p class = "registerType"> <input type = "text" placeholder = "Enter Password" name = "password" required> </p>
 					<p class = "registerType"> <input type = "text" placeholder = "Enter Email Address" name = "emailAddress" required ></p>
 					
