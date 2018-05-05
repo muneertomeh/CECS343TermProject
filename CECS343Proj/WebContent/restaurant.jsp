@@ -54,7 +54,7 @@
 	</p>
 	
 	<div class ="col" align = "left">
-		<div class = "subclass" align left>
+		<div class = "subclass">
 			<button type = "submit">
 				Write Review
 			</button>
