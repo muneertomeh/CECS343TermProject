@@ -25,6 +25,8 @@ body{
 	text-align:center;
 }
 
+
+
 h2{
 	margin-left: 35px;
 	margin-bottom:20px;
@@ -59,65 +61,30 @@ h2{
 /* Styles for home.jsp*/
 
 
+.websiteLogo{
+	text-align:center;
+	width:100px;
+	height:100px;
+	background:"logo.jpg";
+	margin:0;
+	padding:0;
+	
+}
+
+
+
+.middlenav{
+	margin-left:60px;
+	text-align:center;
+	
+	margin-top:100px;
+}
+
+
 *{
 	
 	margin : 0;
 	padding: 0;
-}
-
-.header{
-	background-image:url(pic.jpg);
-	height: 100vh;
-	background-size: cover;
-	background-position: center;
-}
-
-
-.main-nav{
-	float:right;
-	list-style: none;
-	margin-top: 30px;
-}
-
-.main-nav li{
-	display: inline-block;
-
-}
-
-.main-nav li a{
-	color : teal;
-	text-decoration: none;
-	padding: 5px 20px;
-	font-family:"Roboto", sans-serif;
-	font-size:15px;
-}
-
-
-.main-nav li a:hover{
-	color: 1px solid black;
-	border : 1px solid black;
-	background-color : yellow;
-}
-
-.theRow{
-	max-width: 1200px;
-	margin:auto;
-}
-
-
-.somethingElse{
-	position : absolute;
-	width: 1200px;
-	margin-left : 0px;
-	margin-top :0px;
-}
-
-.headfile{
-	color: black;
-	text-transform:lowercase;
-	font-size:60px;
-	text-align:center;
-	margin-top: 200px;
 }
 
 
@@ -157,6 +124,17 @@ input[type=text] {
     color: black;
  }
 
+
+
+
+/* css for restaurant.jsp*/
+
+.subclass{
+	margin: 50px;
+	margin-left : 400px;
+	
+	
+}
 
 
 

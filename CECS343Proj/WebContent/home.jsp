@@ -44,20 +44,26 @@
 		</div>	
 
 	
-<div class="topnav" align = "center">
- <form action = "Search" method = "get">
-    <button type = "submit">Search</button>	
- 	<input name = "keyword" type="search" placeholder="Search..">
- 	<input type ="hidden" name = "nameOfUser" value = <%=name %>>
- </form>
- 
-  <a href="login.jsp">
-    <button type = "submit" class = "btn btn-primary btn-lg">Login</button>
-  </a>
-  <a href="register.jsp">
-    <button type = "submit" class = "btn btn-primary btn-lg">Register</button>
-  </a>
-</div>
-
-</body>
-</html>
+		<div class="topnav" align = "center">
+		 <form action = "Search" method = "get">
+		    <button type = "submit">Search</button>	
+		 	<input name = "keyword" type="search" placeholder="Search..">
+		 	<input type ="hidden" name = "nameOfUser" value = <%=name %>>
+		 </form>
+		</div>
+		
+		
+		<img src = "logo.jpg" align = "middle">
+	
+		 
+		<div class = "middlenav"> 
+		  <a href="login.jsp">
+		    <button type = "submit" class = "btn btn-primary btn-lg">Login</button>
+		  </a>
+		  <a href="register.jsp">
+		    <button type = "submit" class = "btn btn-primary btn-lg">Register</button>
+		  </a>
+		</div>
+		
+		</body>
+		</html>
