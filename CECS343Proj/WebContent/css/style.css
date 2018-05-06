@@ -17,6 +17,9 @@ body{
 	width: 100%;
  	background-color: #fff !important;
 }
+a, a:hover, a:visited{
+	text-decoration: none;
+}
 button, button.btn {
 	display: flex;
 	justify-content: center;
@@ -36,7 +39,7 @@ button:hover, button.btn:hover{
 input{
     width: 100%;
     /*padding: 12px 25px;*/
-    margin: 8px 0;
+    /*margin: 8px 0;*/
     border: 4px solid #ccc;
     box-sizing: border-box;
  }
@@ -107,6 +110,63 @@ header{
 }
 
 /* ================*/
+
+/* ==== HOME PAGE ==== */
+#homepage-wrapper{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-flow: wrap;
+	width: 100%;
+	height: auto;
+}
+#homepage-wrapper div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column wrap;
+	width: 100%;
+	height: auto;
+	padding: 1rem 0;
+	margin: 1rem 0;
+}
+#homepage-logo-wrapper{
+}
+#homepage-logo-wrapper div{
+	width: 65%;
+	height: auto;
+	padding: 0;
+	margin: 0;
+}
+#homepage-logo-wrapper div img{
+	width: 100%;
+}
+#homepage-links-wrapper{
+
+}
+#homepage-links-wrapper > div{
+	width: auto;
+	height: auto;
+	border-radius: 3px;
+	background-color: rgba(255,255,255,0.85);
+}
+#homepage-links-wrapper > div:hover{
+	background-color: rgba(255,255,255,1);
+	box-shadow: 0 0 5px rgba(11,11,11,0.45);
+}
+#homepage-links-wrapper div div{}
+#homepage-links-wrapper div div:hover h4{
+	box-shadow: 0 3px 1px -1px #0099ff;
+}
+#homepage-links-wrapper div h4{
+	padding: 0 1rem;
+	margin: 0 1rem;
+}
+
+#homepage-links-wrapper div a{
+	margin: 1rem 1rem;
+}
+/* =================== */
 
 /* ==== SEARCH RESULTS PAGE ==== */
 #search-results{
@@ -242,14 +302,13 @@ header{
 }
 /* ========================= */
 
+/* ==== REGISTRATION PAGE ==== */
 .registerContainer{
 	margin:60px auto;
 	margin-top:100px;
 	margin-bottom:100px;
 	width:540px;
 }
-
-
 .registration{
 	background: white;
 	margin : 0px auto;
@@ -259,8 +318,6 @@ header{
 	margin-bottom:100px;
 	text-align:center;
 }
-
-
 .registerButton {
 	margin-top:20px;
 	text-align:justify;
@@ -273,60 +330,7 @@ header{
 	text-align:center;
 	
 }
-
-
 .registerAdditional{
 	margin-top:10px;
 }
-
-
-img{
-	display:block;
-	border-radius:30%;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:20px;	
-}
-
-
-.middlenav{
-	margin-left:auto;
-	margin-right:auto;
-	text-align:center;
-	margin-top:100px;
-}
-
-
-p.normal{
-	font-family: "Arial";
-	font-size: 20px;
-	color : #ffff00;
-
-}
-
-/* Create two equal columns that floats next to each other */
-.col {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 130px; /* Should be removed. Only for demonstration */
-}
-
-
-
-
-
-
-
-/* css for restaurant.jsp*/
-
-.subclass{
-	margin: 50px;
-	margin-left : 400px;
-	
-	
-}
-
-
-
-
+/* ========================== */
