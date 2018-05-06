@@ -119,14 +119,33 @@ public class RestaurantDAO extends HttpServlet{
 		}
 		//else if the Write Review paramter is passed, then add the review to the restaurant's review history
 		else if (request.getParameter("Write Review")!=null) {
-			String comment = ((ServletRequest)request).getParameter("comment");
-			String restaurantID = ((ServletRequest)request).getParameter("restID");
+			String comment = ((ServletRequest)request).getParameter("review");
+			String restaurantID = ((ServletRequest)request).getParameter("restaurantID");
 			String author = ((ServletRequest)request).getParameter("username");
+			String restName  = ((ServletRequest)request).getParameter("restaurantName");
+			String restAddress = ((ServletRequest)request).getParameter("restaurantAddress");
+			String restType = ((ServletRequest)request).getParameter("restaurantType");
+			
 			
 			int restaurID = Integer.parseInt(restaurantID);
 			
 			Review newReview = new Review(restaurID, comment);
 			this.addReview(newReview, restaurID, author);
+			
+			
+			Restaurant aRestaurant = new Restaurant();
+			aRestaurant.setRestaurantID(restaurID);
+			aRestaurant.setRestaurantName(restName);
+			aRestaurant.setRestaurantType(restType);
+			BusinessInfo busInfo = this.retrieveRestaurantInfo(restaurID);
+			aRestaurant.setRestaurantBusinessInfo(busInfo);
+			
+			request.setAttribute("chosenRestaurant", aRestaurant);
+			request.setAttribute("loggedUser", author);
+			RequestDispatcher reqDispatcher = request.getRequestDispatcher("restaurant.jsp");
+			reqDispatcher.forward(request, response);
+			
+			
 		}
 		
 	
@@ -290,6 +309,7 @@ public class RestaurantDAO extends HttpServlet{
 			statement.setString(4, recentReview.getComment());
 			statement.setInt(5, recentReview.getStarsGiven());
 			statement.executeUpdate();
+			
 		}
 		catch(Exception e) {
 			e.printStackTrace();

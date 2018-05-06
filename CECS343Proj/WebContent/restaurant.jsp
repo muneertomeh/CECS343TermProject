@@ -81,8 +81,15 @@
                 <div>
                     <h3><strong>Write a Review</strong></h3>
                     <hr/>
-                    <textarea type="text" name="review"></textarea>
-                    <button type="submit" name="Write Review" value = "Write Review">Submit</button>
+                    <form action = "Search" method = "post">
+                    	<textarea type="text" name="review"></textarea>
+                    	<button type="submit" name="Write Review" value = "Write Review">Submit</button>
+                    	<input type = "hidden" name ="username" value = <%=username %>>
+                    	<input type = "hidden" name = "restaurantID" value = <%=selectedRestaurant.getRestaurantID() %>>
+                    	<input type="hidden" name="restaurantName" value = <%= selectedRestaurant.getRestaurantName() %> />
+                        <input type="hidden" name="restaurantAddress" value=<%= selectedRestaurant.getRestaurantAddress() %> />
+                        <input type = "hidden" name="restaurantType" value = <%= selectedRestaurant.getRestaurantType() %> />
+                	</form>
                 </div>
             </div>
             <div class="restaurant-wrapper" id="list-reviews-wrapper">
