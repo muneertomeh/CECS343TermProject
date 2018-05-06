@@ -59,17 +59,28 @@
          </div>
     </header>
     <section id="main-content">
-    	<div id="homepage-logo-wrapper">
-	    	<div>
-				<img src="./img/logo.jpg" align="middle">
+    	<div id="homepage-wrapper">
+	    	<div id="homepage-logo-wrapper">
+	    		<div>
+					<img src="./img/logo.jpg">
+				</div>
 			</div>
-			<div class="middlenav"> 
-			  <a class="a-btn" href="login.jsp">
-			    <button type="submit" class="btn btn-primary btn-lg">Login</button>
-			  </a>
-			  <a class="a-btn" href="register.jsp">
-			    <button type="submit" class="btn btn-primary btn-lg">Register</button>
-			  </a>
+			<div id="homepage-links-wrapper">
+				<div>
+					<div>
+						<h4>Have an Account?</h4>
+						<a class="a-btn" href="login.jsp">
+						    <button type="submit" class="btn btn-primary btn-lg">Login</button>
+						</a>
+					</div>
+					<div>
+					  	<h4>New User?</h4>
+
+						<a class="a-btn" href="register.jsp">
+						    <button type="submit" class="btn btn-primary btn-lg">Register</button>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
