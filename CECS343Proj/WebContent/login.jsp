@@ -20,15 +20,12 @@
 		<div class = "registration">
 			<h2> Log In </h2>
 			<div style="color:red">${errorMessage}</div>	
-				<form action = "Login" method = "GET">
-					<p class = "registerType"> <input type="text" placeholder="Enter Username" name="username" required></p>
-					<p class = "registerType"> <input type = "text" placeholder = "Enter Password" name = "password" required> </p>
-      				<button class = "button registerButton" "type="submit"> Log In</button>
-				</form>
+			<form action = "Login" method = "GET">
+				<p class = "registerType"> <input type="text" placeholder="Enter Username" name="username" required></p>
+				<p class = "registerType"> <input type = "text" placeholder = "Enter Password" name = "password" required> </p>
+  				<button class = "button registerButton" "type="submit"> Log In</button>
+			</form>
 		</div>
-			
 	</section>
-
-
 </body>
 </html>

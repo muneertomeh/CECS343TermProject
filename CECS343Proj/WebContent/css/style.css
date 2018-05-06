@@ -1,7 +1,79 @@
+*{
+	transition: 0.3s;
+	transition-timing-function: cubic-bezier(0.3,0.1);
+}
 body{
 	 background-color: #0fff !important;
 }
 
+/* ==== HEADER ====*/
+header{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+	width: 100%;
+	height: auto;
+	padding: 0 0 1rem;
+	margin: 0 0 1rem;
+}
+#header-wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+	width: 100%;
+	height: auto;
+}
+#header-wrapper > div{
+	display: flex;
+	align-items: center;
+	flex-flow: row wrap;
+	width: 100%;
+	/*padding: 0.5rem 0;*/
+	margin: 0 0 1rem;
+}
+#navigation-wrapper{
+	justify-content: flex-start;
+	border-radius: 3px;
+}
+#navigation-wrapper div{
+	padding: 1rem 1rem;
+	margin: 0 1rem;
+}
+#navigation-wrapper div a{
+}
+#navigation-wrapper div a:hover{
+	text-decoration: none;
+}
+#search-wrapper{
+	justify-content: center;
+}
+#search-wrapper form{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+#search-wrapper form > *{
+	padding: 0 1rem;
+	margin: 0 1rem;
+}
+#search-wrapper form button{
+	padding: 0.75rem;
+	width: auto;
+	color: #f1f1f1;
+}
+#search-wrapper form button:hover{
+	background-color: rgba(225,225,225,0.3);
+	color: #111111;
+}
+#search-wrapper form input{
+	width: 45%;
+	padding: 0.5rem;
+}
+
+/* ================*/
 
 /* styles for register.jsp and login.jsp
 
@@ -109,9 +181,10 @@ button {
     margin: auto;
     border: 2;
     cursor: pointer;
-    width: 10%; }
+    width: 10%;
+}
 
-input[type=text] {
+input{
     width: 70%;
     padding: 12px 25px;
     margin: 8px 0;

@@ -12,39 +12,40 @@
 <title>Insert title here</title>
 </head>
 <style>
+    
 </style>
 
 
 <body background = "search.png">
-
-
 	<%
 	ArrayList<Restaurant> restaurantList = (ArrayList<Restaurant>)request.getAttribute("restaurantResults");
 	String name = (String)request.getAttribute("username");
-
 	%>
-	<div class="w3-bar w3-teal">
-  		<a href="register.jsp" class="w3-bar-item w3-button">Home</a>
-  		<a href="#" class="w3-bar-item w3-button">Link 1</a>
-  		<a href="#" class="w3-bar-item w3-button">Link 2</a>
-  		<a href="#" class="w3-bar-item w3-button">Link 3</a>
-  		<a href = "#" class = "w3-bar-item w3-button"> <%=name %> </a>
-	</div>
-	
-
-	<div class="topnav" align = "center">
-		<form action = "Search" method = "get">
-    		<button type = "submit">Search</button>	
- 			<input name = "keyword" type="search" placeholder="Search..">
- 			<input type ="hidden" name = "nameOfUser" value = <%=name %>>
- 		</form>
-	</div>
+	<header>
+        <div id="header-wrapper">
+        	<div class="w3-bar w3-teal" id="navigation-wrapper">
+                <div>
+                    <a href="register.jsp" class="w3-bar-item w3-button">Home</a>
+                    <a href="#" class="w3-bar-item w3-button">Link 1</a>
+                    <a href="#" class="w3-bar-item w3-button">Link 2</a>
+                    <a href="#" class="w3-bar-item w3-button"><%=name %></a>
+                </div>
+            </div>
+            <div id="search-wrapper">
+            	<form action = "Search" method = "get">
+                	<button type="submit">Search</button>	
+             		<input name="keyword" type="search" placeholder="Search..">
+             		<input type="hidden" name="nameOfUser" value=<%=name %>>
+             	</form>
+             </div>
+         </div>
+    </header>
 	
 	<%
 
 	
 	if(restaurantList ==null){
-		out.println("No restaurants have been identified with that name.");
+		out.println("No restaurants havve been identified with that name");
 	}
 	
 	

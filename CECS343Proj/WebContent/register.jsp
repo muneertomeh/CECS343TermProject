@@ -25,7 +25,7 @@
 			<div style="color:red">${errorMessage}</div>	
 				<form action = "Register" method = "GET">
 					<p class = "registerType"> <input type="text" placeholder="Enter Username" name="username" required></p>
-					<p class = "registerType"> <input type = "text" placeholder = "Enter Password" name = "password" required> </p>
+					<p class = "registerType"> <input type = "password" placeholder = "Enter Password" name = "password" required> </p>
 					<p class = "registerType"> <input type = "text" placeholder = "Enter Email Address" name = "emailAddress" required ></p>
 					
       				<button class = "button registerButton" "type="submit"> Register</button>
