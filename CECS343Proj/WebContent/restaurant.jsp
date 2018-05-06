@@ -44,8 +44,8 @@
                 </div>
             </div>
             <div id="search-wrapper">
-            	<form action ="Search" method = "POST">
-                	<button type="submit" name = "Write Review" value = "Write Review">Search</button>	
+            	<form action ="Search" method = "GET">
+                	<button type="submit">Search</button>	
              		<input name="keyword" type="search" placeholder="Search..">
              		<input type="hidden" name="nameOfUser" value=<%=username %>>
              	</form>
@@ -82,7 +82,7 @@
                     <h3><strong>Write a Review</strong></h3>
                     <hr/>
                     <textarea type="text" name="review"></textarea>
-                    <button type="submit">Submit</button>
+                    <button type="submit" name="Write Review" value = "Write Review">Submit</button>
                 </div>
             </div>
             <div class="restaurant-wrapper" id="list-reviews-wrapper">
