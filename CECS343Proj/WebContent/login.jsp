@@ -18,10 +18,10 @@
             background-attachment: fixed;
         }
     </style>
-<title>Login</title>
+	<title>Login</title>
 </head>
 
-<body background="food.png">
+<body>
 	<section class="registerContainer">
 		<div class="registration">
 			<h2> Log In </h2>
