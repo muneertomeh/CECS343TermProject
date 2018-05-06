@@ -32,7 +32,7 @@
 				<p class="registerType"> <input type="password" placeholder="Enter Password" name="password" required> </p>
 				<p class="registerType"> <input type = "text" placeholder = "Enter Email Address" name="emailAddress" required ></p>
 				
-  				<button class="button registerButton" type="submit"> Register</button>
+  				<button class="button registerButton" type="submit"> Registerr</button>
 			</form>
 			<div class="registerAdditional">
 				<p class="registerType"><a href="login.jsp">Already have an account, sign in</a></p>
