@@ -12,7 +12,7 @@ html{
 body{
 	display: flex;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: space-between;
 	flex-flow: row wrap;
 	width: 100%;
  	background-color: #fff !important;
@@ -159,8 +159,8 @@ footer{
 	list-style-type: none;
 }
 .footer-icon{
-	max-width: 50px;
-	max-height: 50px;
+	max-width: 45px;
+	max-height: 45px;
 	margin: 0 0.5rem;
 }
 .footer-icon img{
