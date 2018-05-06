@@ -26,7 +26,7 @@
     </title>
     <style>
         body{
-            background-image: url("search.png");
+            background-image: url("./img/search.png");
             background-size: cover;
             background-attachment: fixed;
         }

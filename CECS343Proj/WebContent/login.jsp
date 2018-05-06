@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<style>
         body{
-            background-image: url("food.png");
+            background-image: url("./img/food.png");
             background-size: cover;
             background-attachment: fixed;
         }

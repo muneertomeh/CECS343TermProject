@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<style>
         body{
-            background-image: url("food.png");
+            background-image: url("./img/food.png");
             background-size: cover;
             background-attachment: fixed;
         }
@@ -25,54 +25,56 @@
 </head>
 
 <body>
-
-
-<%
-	//retrieves the User object passed from the login.jsp or register.jsp page
-	User loggedUser = (User)request.getAttribute("User");
-	String name;
-	
-	//if the entry inside the loggedUser variable is null, then don't display a username
-	if(loggedUser==null){
-		name = null;
-	
-	}
-	else{
-		name = loggedUser.getUsername();
-	}	
-%>
-		<header>
-	        <div id="header-wrapper">
-	        	<div class="w3-bar w3-teal" id="navigation-wrapper">
-	                <div>
-	                    <a href="register.jsp" class="w3-bar-item w3-button">Home</a>
-	                    <a href="#" class="w3-bar-item w3-button">Link 1</a>
-	                    <a href="#" class="w3-bar-item w3-button">Link 2</a>
-	                    <a href="#" class="w3-bar-item w3-button"><%=name %></a>
-	                </div>
-	            </div>
-	            <div id="search-wrapper">
-	            	<form action = "Search" method = "get">
-	                	<button type="submit">Search</button>	
-	             		<input name="keyword" type="search" placeholder="Search..">
-	             		<input type="hidden" name="nameOfUser" value=<%=name %>>
-	             	</form>
-	             </div>
-	         </div>
-	    </header>
+	<%
+		//retrieves the User object passed from the login.jsp or register.jsp page
+		User loggedUser = (User)request.getAttribute("User");
+		String name;
 		
+		//if the entry inside the loggedUser variable is null, then don't display a username
+		if(loggedUser==null){
+			name = null;
 		
-		<img src = "logo.jpg" align = "middle">
-	
-		 
-		<div class = "middlenav"> 
-		  <a href="login.jsp">
-		    <button type = "submit" class = "btn btn-primary btn-lg">Login</button>
-		  </a>
-		  <a href="register.jsp">
-		    <button type = "submit" class = "btn btn-primary btn-lg">Register</button>
-		  </a>
+		}
+		else{
+			name = loggedUser.getUsername();
+		}	
+	%>
+	<header>
+        <div id="header-wrapper">
+        	<div class="w3-bar w3-teal" id="navigation-wrapper">
+                <div>
+                    <a href="register.jsp" class="w3-bar-item w3-button">Home</a>
+                    <a href="#" class="w3-bar-item w3-button">Link 1</a>
+                    <a href="#" class="w3-bar-item w3-button">Link 2</a>
+                    <a href="#" class="w3-bar-item w3-button"><%=name %></a>
+                </div>
+            </div>
+            <div id="search-wrapper">
+            	<form action="Search" method="get">
+                	<button type="submit">Search</button>	
+             		<input name="keyword" type="search" placeholder="Search..">
+             		<input type="hidden" name="nameOfUser" value=<%=name %>>
+             	</form>
+             </div>
+         </div>
+    </header>
+    <section id="main-content">
+    	<div id="homepage-logo-wrapper">
+	    	<div>
+				<img src="./img/logo.jpg" align="middle">
+			</div>
+			<div class="middlenav"> 
+			  <a class="a-btn" href="login.jsp">
+			    <button type="submit" class="btn btn-primary btn-lg">Login</button>
+			  </a>
+			  <a class="a-btn" href="register.jsp">
+			    <button type="submit" class="btn btn-primary btn-lg">Register</button>
+			  </a>
+			</div>
 		</div>
+	</section>
+	<footer>
 		
-		</body>
-		</html>
+	</footer>
+</body>
+</html>
