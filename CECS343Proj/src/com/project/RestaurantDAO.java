@@ -17,18 +17,6 @@ import com.mysql.jdbc.PreparedStatement;
 public class RestaurantDAO extends HttpServlet{
 	
 	
-	
-	public static void main(String []args) {
-		int restaurID = 2;
-		String comment = "I need to come back to this restaurant again, the employees were extremely nice and welcoming";
-		Review newReview = new Review(restaurID, comment);
-		
-		
-		String author = "HenrySpencer";
-		RestaurantDAO rd = new RestaurantDAO();
-		rd.addReview(newReview, restaurID, author);
-	}
-	
 	public RestaurantDAO() {
 		super();
 	}
@@ -63,22 +51,24 @@ public class RestaurantDAO extends HttpServlet{
 		}
 		//else, if the review number is entered, then update the review's stats by issuing either a like or dislike for that user
 		else if(request.getParameter("Like") !=null) {
+			String user = ((ServletRequest)request).getParameter("username").toString();
 			String revNum= ((ServletRequest)request).getParameter("reviewNumber").toString();
 			String restID = ((ServletRequest)request).getParameter("restaurID").toString();
-			int revNumber = Integer.parseInt(revNum);
-			int restaurID = Integer.parseInt(restID);
 			
-			
-			Review r = new Review(restaurID, revNumber);
 			String restName = ((ServletRequest)request).getParameter("restaurantName").toString();
 			String restAddress = ((ServletRequest)request).getParameter("restaurantAddress").toString();
 			String restType = ((ServletRequest)request).getParameter("restaurantType").toString();
 			
+			int revNumber = Integer.parseInt(revNum);
+			int restaurID = Integer.parseInt(restID);
 			
-			System.out.println(restaurID + "  wth  " + revNumber +  " wth2 " + r.getReviewNumber());
-			r.updateLikeOrDislike("UncleJack",true, restaurID);
-
-			
+			//if the content of user is not equivalent to null, then don't restrict in liking a review
+			if(!user.equals(null)) {
+				Review r = new Review(restaurID, revNumber);
+				r.updateLikeOrDislike(user,true, restaurID);
+			}
+		
+			//must reinstantiate a Restaurant object once again, since forwarding to restaurant.jsp has to be done
 			Restaurant aRestaurant = new Restaurant();
 			aRestaurant.setRestaurantID(restaurID);
 			aRestaurant.setRestaurantName(restName);
@@ -87,25 +77,32 @@ public class RestaurantDAO extends HttpServlet{
 			aRestaurant.setRestaurantBusinessInfo(busInfo);
 			
 			request.setAttribute("chosenRestaurant", aRestaurant);
+			request.setAttribute("loggedUser", user);
 			RequestDispatcher reqDispatcher = request.getRequestDispatcher("restaurant.jsp");
 			reqDispatcher.forward(request, response);
 			
 		}
 		else if(request.getParameter("Dislike")!=null) {
+			//loading the passed parameters from restaurant.jsp which include attributes for the restaurant alongside the username
+			String user = ((ServletRequest)request).getParameter("username").toString();
 			String revNum= ((ServletRequest)request).getParameter("reviewNumber").toString();
 			String restID = ((ServletRequest)request).getParameter("restaurID").toString();
-			int revNumber = Integer.parseInt(revNum);
-			int restaurID = Integer.parseInt(restID);
 			
-			
-			Review r = new Review(restaurID, revNumber);
 			String restName = ((ServletRequest)request).getParameter("restaurantName").toString();
 			String restAddress = ((ServletRequest)request).getParameter("restaurantAddress").toString();
 			String restType = ((ServletRequest)request).getParameter("restaurantType").toString();
 			
-			r.updateLikeOrDislike("UncleJack",false, restaurID);
-
 			
+			int revNumber = Integer.parseInt(revNum);
+			int restaurID = Integer.parseInt(restID);
+			
+			//if the content of user is not equivalent to null, then don't restrict in disliking a review
+			if(!user.equals(null)) {
+				Review r = new Review(restaurID, revNumber);
+				r.updateLikeOrDislike(user,false, restaurID);
+			}
+			
+			//must reinstantiate a Restaurant object once again, since forwarding to restaurant.jsp has to be done
 			Restaurant aRestaurant = new Restaurant();
 			aRestaurant.setRestaurantID(restaurID);
 			aRestaurant.setRestaurantName(restName);
@@ -114,25 +111,35 @@ public class RestaurantDAO extends HttpServlet{
 			aRestaurant.setRestaurantBusinessInfo(busInfo);
 			
 			request.setAttribute("chosenRestaurant", aRestaurant);
+			request.setAttribute("loggedUser", user);
 			RequestDispatcher reqDispatcher = request.getRequestDispatcher("restaurant.jsp");
 			reqDispatcher.forward(request, response);
 		}
 		//else if the Write Review paramter is passed, then add the review to the restaurant's review history
 		else if (request.getParameter("Write Review")!=null) {
-			String comment = ((ServletRequest)request).getParameter("review");
-			String restaurantID = ((ServletRequest)request).getParameter("restaurantID");
+			
+			//loading the passed parameters from restaurant.jsp which contain the current username, review comment, and the rating from the radio button
 			String author = ((ServletRequest)request).getParameter("username");
+			String comment = ((ServletRequest)request).getParameter("review");
+			String rating = ((ServletRequest)request).getParameter("radio");
+			
+			//loading the passed parameters from restaurant.jsp which include attributes for the restaurant
+			String restaurantID = ((ServletRequest)request).getParameter("restaurantID");
 			String restName  = ((ServletRequest)request).getParameter("restaurantName");
 			String restAddress = ((ServletRequest)request).getParameter("restaurantAddress");
 			String restType = ((ServletRequest)request).getParameter("restaurantType");
 			
 			
+			
 			int restaurID = Integer.parseInt(restaurantID);
 			
-			Review newReview = new Review(restaurID, comment);
-			this.addReview(newReview, restaurID, author);
-			
-			
+			//if the username is not equivalent to null, then the user's review is accepted and saved
+			if(!author.equals(null)) {
+				int stars = Integer.parseInt(rating);
+				Review newReview = new Review(restaurID, comment, stars);
+				this.addReview(newReview, restaurID, author);
+			}
+			//must reinstantiate a Restaurant object once again, since forwarding to restaurant.jsp has to be done
 			Restaurant aRestaurant = new Restaurant();
 			aRestaurant.setRestaurantID(restaurID);
 			aRestaurant.setRestaurantName(restName);

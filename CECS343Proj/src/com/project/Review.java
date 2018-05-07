@@ -49,7 +49,7 @@ public class Review {
 	 * @param author
 	 * @param id
 	 */
-	public Review(int id, String reviewContent) {
+	public Review(int id, String reviewContent, int stars) {
 		try {
 			int reviewCount = 0;
 			Connection c = getConnection();
@@ -60,7 +60,7 @@ public class Review {
 			while(rs.next()) {
 				reviewCount = rs.getInt("reviewCount");
 			}
-			
+			starsGiven = stars;
 			comment = reviewContent;
 			reviewNumber = ++reviewCount;
 			likesDislikes = new HashMap<String, Boolean>();

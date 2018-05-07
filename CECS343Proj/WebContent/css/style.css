@@ -1,21 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 /* ==== GENERAL STYLING ==== */
 *{
 	transition: 0.3s;
-	transition-timing-function: cubic-bezier(0.3,0.1);
+	transition-timing-function: cubic-bezier(0.1, 0.4, 0.7, 1.0);
 }
 html{
 	width: 100%;
 	height: auto;
+	font-family: 'Roboto', sans-serif;
 }
 body{
 	display: flex;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: space-between;
 	flex-flow: row wrap;
 	width: 100%;
  	background-color: #fff !important;
 }
-button {
+
+.ratingSelection{
+	margin-left:auto;
+	margin-right:auto;
+	margin-botton:20px;
+	
+}
+
+
+
+a, a:hover, a:visited{
+	text-decoration: none;
+}
+button, button.btn {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -24,21 +39,21 @@ button {
     padding: 5px 10px;
     margin: auto;
     cursor: pointer;
-	color: #f1f1f1;
+	color: #f1f1f1 !important;
 }
-button:hover{
+button:hover, button.btn:hover{
 	background-color: rgba(225,225,225,0.3);
-	color: #111111;
+	color: #111111 !important;
 }
 
 input{
-    width: 70%;
-    padding: 12px 25px;
-    margin: 8px 0;
-    display: inline-block;
+    width: 100%;
+    /*padding: 12px 25px;*/
+    /*margin: 8px 0;*/
     border: 4px solid #ccc;
     box-sizing: border-box;
  }
+
 
 /* ======================== */
 
@@ -66,12 +81,16 @@ header{
 	align-items: center;
 	flex-flow: row wrap;
 	width: 100%;
-	/*padding: 0.5rem 0;*/
-	margin: 0 0 1rem;
+	margin: 0 0 2rem;
 }
-#navigation-wrapper{
+div#navigation-wrapper{
 	justify-content: flex-start;
 	border-radius: 3px;
+	background-color: rgb(0,150,136,0.9) !important;
+}
+div#navigation-wrapper:hover{
+	background-color: rgb(0,150,136,1) !important;
+	box-shadow: 0 0 3px rgba(0,150,136,0.9);
 }
 #navigation-wrapper div{
 	padding: 1rem 1rem;
@@ -105,6 +124,123 @@ header{
 }
 
 /* ================*/
+
+/* ==== FOOTER ==== */
+footer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	padding: 1rem 0 0;
+	margin: 1rem 0 0;
+}
+#footer-wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100px;
+	padding: 1rem 0 0;
+	margin: 1rem 0 0;
+	background-color: rgba(0,150,136, 0.9);
+}
+#footer-wrapper div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+	width: 50%;
+	height: auto;
+}
+#footer-info-wrapper{
+	justify-content: flex-start;
+}
+#footer-icon-wrapper{
+	justify-content: flex-end;
+}
+#footer-icons{
+	display: flex;
+	justify-content: space-between;
+	align-items: space-between;
+	flex-flow: row wrap;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+.footer-icon{
+	max-width: 45px;
+	max-height: 45px;
+	margin: 0 0.5rem;
+}
+.footer-icon img{
+	width: 100%;
+	height: 100%;
+}
+.footer-icon:hover{
+	opacity: 0.7;
+}
+
+/* ================ */
+
+/* ==== HOME PAGE ==== */
+#homepage-wrapper{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-flow: wrap;
+	width: 100%;
+	height: auto;
+}
+#homepage-wrapper div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column wrap;
+	width: 100%;
+	height: auto;
+	padding: 1rem 0;
+	margin: 1rem 0;
+}
+#homepage-logo-wrapper{
+}
+#homepage-logo-wrapper div{
+	width: 65%;
+	height: auto;
+	padding: 0;
+	margin: 0;
+
+}
+#homepage-logo-wrapper div img{
+	width: 100%;
+	padding: 1rem;
+}
+#homepage-links-wrapper{
+
+}
+#homepage-links-wrapper > div{
+	width: auto;
+	height: auto;
+	border-radius: 3px;
+	background-color: rgba(255,255,255,0.85);
+}
+#homepage-links-wrapper > div:hover{
+	background-color: rgba(255,255,255,1);
+	box-shadow: 0 0 5px rgba(11,11,11,0.45);
+}
+#homepage-links-wrapper div div{}
+#homepage-links-wrapper div div:hover h4{
+	box-shadow: 0 3px 2px -2px #0099ff;
+}
+#homepage-links-wrapper div h4{
+	padding: 0 1rem;
+	margin: 0 1rem;
+}
+
+#homepage-links-wrapper div a{
+	margin: 1rem 1rem;
+}
+/* =================== */
 
 /* ==== SEARCH RESULTS PAGE ==== */
 #search-results{
@@ -141,14 +277,112 @@ header{
 }
 /* ============================= */
 
+/* ==== RESTAURANT PAGE ==== */
+#main-content{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+	width: 100%;
+	height: auto;
+	padding: 0;
+	margin: 0;
+}
+#main-content > .content-wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	padding: 2rem 0;
+}
+#info-wrapper{
+	flex-flow: row wrap;
+	width: 100%;
+
+}
+#info-wrapper > div{
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	padding: 2rem;
+	margin: 0 1rem;
+	border-radius: 3px;
+	background-color: rgba(255,255,255,0.75);
+	box-shadow: 0 0 3px rgba(11,11,11,0.45);
+}
+#hours-wrapper h3{
+	text-align: center;
+}
+#reviews-wrapper{
+	flex-flow: column wrap;
+	width: 100%;
+	height: auto;
+}
+.restaurant-wrapper{
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-flow: row wrap;
+	width: 100%;
+	height: auto;
+	padding: 1rem 0;
+}
+#write-review-wrapper{
+	align-items: center;
+	flex-flow: column wrap;
+}
+#write-review-wrapper div{
+	justify-content: center;
+	align-items: center;
+	flex-flow: column wrap;
+	width: 50%;
+}
+#write-review-wrapper div textarea{
+	width: 100%;
+	height: 10rem;
+}
+#write-review-wrapper div button{
+	margin: 1rem 0;
+}
+#list-reviews-wrapper{
+	align-items: center;
+	flex-flow: column wrap;
+}
+#list-reviews-wrapper .review-wrapper{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-flow: column wrap;
+	padding: 2rem;
+	margin: 1rem 0;
+	border-radius: 3px;
+	background-color: rgba(255,255,255, 0.75);
+}
+#list-reviews-wrapper .review-wrapper:hover{
+	background-color: rgba(255,255,255,1);
+	box-shadow: 0 0 5px rgba(11,11,11,0.45);
+}
+#list-reviews-wrapper .review-wrapper .review-content{
+	padding: 1rem;
+	margin: 1rem 0;
+	color: #111111;
+}
+#list-reviews-wrapper .review-wrapper .review-actions{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-flow: row wrap;
+}
+/* ========================= */
+
+/* ==== REGISTRATION PAGE ==== */
 .registerContainer{
 	margin:60px auto;
 	margin-top:100px;
 	margin-bottom:100px;
 	width:540px;
 }
-
-
 .registration{
 	background: white;
 	margin : 0px auto;
@@ -158,8 +392,6 @@ header{
 	margin-bottom:100px;
 	text-align:center;
 }
-
-
 .registerButton {
 	margin-top:20px;
 	text-align:justify;
@@ -172,59 +404,10 @@ header{
 	text-align:center;
 	
 }
-
-
 .registerAdditional{
 	margin-top:10px;
 }
 
-
-img{
-	display:block;
-	border-radius:30%;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:20px;	
-}
-
-
-.middlenav{
-	margin-left:auto;
-	margin-right:auto;
-	text-align:center;
-	margin-top:100px;
-}
-
-
-p.normal{
-	font-family: "Arial";
-	font-size: 20px;
-	color : #ffff00;
-
-}
-
-/* Create two equal columns that floats next to each other */
-.col {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 130px; /* Should be removed. Only for demonstration */
-}
-
-
-
-
-
-
-
-/* css for restaurant.jsp*/
-
-.subclass{
-	margin: 50px;
-	margin-left : 400px;
-	
-	
-}
 
 .checked {
     color: orange;

@@ -82,7 +82,32 @@
                     <h3><strong>Write a Review</strong></h3>
                     <hr/>
                     <form action = "Search" method = "post">
+                    	
+                    <div class = "ratingSelection">
+                    	<h3>Rate the restaurant</h3>
+                    	<label class ="radio-inline">
+                    		<input type ="radio" name = "radio" value="1"> 1
+                    	</label>
+                    	
+                    	<label class ="radio-inline">
+                    		<input type= "radio" name = "radio" value="2"> 2
+                    	</label>
+                    	
+                    	<label class ="radio-inline">
+                    		<input type= "radio" name = "radio" value ="3"> 3
+                    	</label>
+                    	<label class ="radio-inline">
+							<input type ="radio" name = "radio" value= "4"> 4
+						</label>
+                    	<label class ="radio-inline">
+         	         		<input type = "radio" name = "radio" value="5"> 5
+               			</label>
+                    </div>	
                     	<textarea type="text" name="review"></textarea>
+                    	
+                    	
+                    	
+                    	
                     	<button type="submit" name="Write Review" value = "Write Review">Submit</button>
                     	<input type = "hidden" name ="username" value = <%=username %>>
                     	<input type = "hidden" name = "restaurantID" value = <%=selectedRestaurant.getRestaurantID() %>>
@@ -117,6 +142,7 @@
                         </div>
                         <div class="review-actions">
                             <form action="Search" method="POST">
+                            	<input type ="hidden" name = "username" value=<%=username %>>
                                 <input type="hidden" name="reviewNumber" value=<%=r.getReviewNumber() %> />
                                 <input type="hidden" name="restaurID" value=<%=selectedRestaurant.getRestaurantID() %> />
                                 <input type="hidden" name="restaurantName" value = <%= selectedRestaurant.getRestaurantName() %> />
@@ -128,6 +154,7 @@
                                 </button>
                             </form>
                             <form action="Search" method="post">
+                            	<input type="hidden" name="username" value=<%=username %>>
                                 <input type="hidden" name="reviewNumber" value=<%=r.getReviewNumber() %> />
                                 <input type="hidden" name="restaurID" value=<%=selectedRestaurant.getRestaurantID() %> />
                                 <input type="hidden" name="restaurantName" value = <%= selectedRestaurant.getRestaurantName() %> />
