@@ -42,15 +42,7 @@
    	<url-pattern>/Register</url-pattern>
 </servlet-mapping>
 
-<servlet>
-   <servlet-name>ApplicationsDAO</servlet-name>
-   <servlet-class>com.project.ApplicationsDAO</servlet-class>
-</servlet>
 
-<servlet-mapping>
-	<servlet-name>ApplicationsDAO</servlet-name>
-   	<url-pattern>/ApplicationsDAO</url-pattern>
-</servlet-mapping>
 
 
 </web-app>
