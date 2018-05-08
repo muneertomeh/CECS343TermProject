@@ -135,9 +135,17 @@ public class RestaurantDAO extends HttpServlet{
 			
 			//if the username is not equivalent to null, then the user's review is accepted and saved
 			if(!author.equals(null)) {
-				int stars = Integer.parseInt(rating);
-				Review newReview = new Review(restaurID, comment, stars);
-				this.addReview(newReview, restaurID, author);
+				//if the rating is equivalent to null, then the review submission is a failure and user will be notified
+				if(rating==null) {
+					request.setAttribute("errorMessage", "Must select a rating selection from 1-5");
+				}
+				//else if is not null, then the review submission is fully completed
+				else {
+					int stars = Integer.parseInt(rating);
+					Review newReview = new Review(restaurID, comment, stars);
+					this.addReview(newReview, restaurID, author);
+					
+				}	
 			}
 			//must reinstantiate a Restaurant object once again, since forwarding to restaurant.jsp has to be done
 			Restaurant aRestaurant = new Restaurant();

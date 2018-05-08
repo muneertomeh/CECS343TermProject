@@ -85,6 +85,7 @@
                     	
                     <div class = "ratingSelection">
                     	<h3>Rate the restaurant</h3>
+                    	<div style="color:red">${errorMessage}</div>	
                     	<label class ="radio-inline">
                     		<input type ="radio" name = "radio" value="1"> 1
                     	</label>
