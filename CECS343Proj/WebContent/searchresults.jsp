@@ -12,7 +12,7 @@
 	<title>Search Results</title>
 	<style>
         body{
-            background-image: url("search.png");
+            background-image: url("./img/search.png");
             background-size: cover;
             background-attachment: fixed;
         }
@@ -83,6 +83,19 @@
 			</div>
 		<%}%>
 	</section>
-	
+	<footer>
+		<div id="footer-wrapper">
+			<div id="footer-info-wrapper">
+				<p>&copy; Gabe Flores, Muneer Tomeh, Truc Tran</p>
+			</div>
+			<div id="footer-icon-wrapper">
+				<ul id="footer-icons">
+					<li class="footer-icon"><a href="https://facebook.com"><img src="./img/logo_facebook.png"/></a></li>
+					<li class="footer-icon"><a href="https://twitter.com"><img src="./img/logo_twitter.png"/></a></li>
+					<li class="footer-icon"><a href="https://youtube.com"><img src="./img/logo_youtube.png"/></a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>
