@@ -18,6 +18,10 @@ public class Register extends HttpServlet {
 		
 	}
 	
+	/**
+	 * This servlet method is in charge of obtaining the request parameters of the entered username, password
+	 * email address and check if the entered information is invalid through supplemental methods
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)	throws ServletException, IOException{
 		String username = ((ServletRequest) request).getParameter("username").toString();
 		String password = ((ServletRequest) request).getParameter("password").toString();
