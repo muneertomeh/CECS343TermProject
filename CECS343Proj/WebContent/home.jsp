@@ -59,22 +59,44 @@
          </div>
     </header>
     <section id="main-content">
-    	<div id="homepage-logo-wrapper">
-	    	<div>
-				<img src="./img/logo.jpg" align="middle">
+    	<div id="homepage-wrapper">
+	    	<div id="homepage-logo-wrapper">
+	    		<div>
+					<img src="./img/logo.jpg">
+				</div>
 			</div>
-			<div class="middlenav"> 
-			  <a class="a-btn" href="login.jsp">
-			    <button type="submit" class="btn btn-primary btn-lg">Login</button>
-			  </a>
-			  <a class="a-btn" href="register.jsp">
-			    <button type="submit" class="btn btn-primary btn-lg">Register</button>
-			  </a>
+			<div id="homepage-links-wrapper">
+				<div>
+					<div>
+						<h4>Have an Account?</h4>
+						<a class="a-btn" href="login.jsp">
+						    <button type="submit" class="btn btn-primary btn-lg">Login</button>
+						</a>
+					</div>
+					<div>
+					  	<h4>New User?</h4>
+
+						<a class="a-btn" href="register.jsp">
+						    <button type="submit" class="btn btn-primary btn-lg">Register</button>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 	<footer>
-		
+		<div id="footer-wrapper">
+			<div id="footer-info-wrapper">
+				<p>&copy; Gabe Flores, Muneer Tomeh, Truc Tran</p>
+			</div>
+			<div id="footer-icon-wrapper">
+				<ul id="footer-icons">
+					<li class="footer-icon"><a href="https://facebook.com"><img src="./img/logo_facebook.png"/></a></li>
+					<li class="footer-icon"><a href="https://twitter.com"><img src="./img/logo_twitter.png"/></a></li>
+					<li class="footer-icon"><a href="https://youtube.com"><img src="./img/logo_youtube.png"/></a></li>
+				</ul>
+			</div>
+		</div>
 	</footer>
 </body>
 </html>
